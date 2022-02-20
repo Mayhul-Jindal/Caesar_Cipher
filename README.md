@@ -10,7 +10,7 @@ Here I used linux strings command, which primarily focuses on determining the co
 
 ![Screenshot 2022-02-21 001251](https://user-images.githubusercontent.com/95216160/154859034-5eb01806-0581-4fcb-81f1-a7fcc38cdb3f.jpg)
 
-Now here I found the last string, bit like a flag so I tried it decrypting using my script and it comes out to be
+Now here I found the last string, bit like a flag so I tried it decrypting using my script and it comes out to be at the 16th shift
 ```
 CSI{c0nGr@tz_qTp1e}
 ```
