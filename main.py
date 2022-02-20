@@ -3,7 +3,8 @@ import string
 import time
 from tqdm import tqdm
 
-alphabets = list(string.ascii_lowercase) # Storing list of alphabets in a variable
+lowercase_alphabets = list(string.ascii_lowercase) # Storing list of alphabets in a variable
+uppercase_alphabets = list(string.ascii_uppercase) # Storing list of alphabets in a variable
 
 #----------------------------Function to decrypt our Caesar Cipher text using Brute Force----------------------------
 def decrypt(encoded_string):
@@ -14,16 +15,19 @@ def decrypt(encoded_string):
 
         for character in encoded_string:
 
-            try: # This try block is used because when traversing through the encoded string we might encounter special characters which can cause errors as they are not in alphabets list
-
-                if alphabets.index(character)-key >= 0:
-                    decoded_letter_list.append(alphabets[alphabets.index(character)-key])
-
+            if character.islower():
+                if lowercase_alphabets.index(character)-key >= 0:
+                    decoded_letter_list.append(lowercase_alphabets[lowercase_alphabets.index(character)-key])
                 else:
-                    decoded_letter_list.append(alphabets[alphabets.index(character)-key+26])
-
-            except:
+                    decoded_letter_list.append(lowercase_alphabets[lowercase_alphabets.index(character)-key+26])
                 
+            elif character.isupper():
+                if uppercase_alphabets.index(character)-key >= 0:
+                    decoded_letter_list.append(uppercase_alphabets[uppercase_alphabets.index(character)-key])
+                else:
+                    decoded_letter_list.append(uppercase_alphabets[uppercase_alphabets.index(character)-key+26])
+
+            else:
                 decoded_letter_list.append(character)
 
         possibilities.append(''.join(decoded_letter_list))
@@ -51,7 +55,7 @@ def main():
     for line in ascii_logo.split('\n'): # This is just to print the ascii_art in the center of the command line window
         print(line.center(shutil.get_terminal_size().columns))
 
-    encoded_string = input("Enter your encoded string: ").lower()
+    encoded_string = input("Enter your encoded string: ")
     decoded_strings = decrypt(encoded_string) # Saving our function result in a variable for readability
 
     for i in tqdm(range (100),desc="Fetching…",ascii=False, ncols=75): # This displays the progress bar
