@@ -19,3 +19,9 @@ CSI{c0nGr@tz_qTp1e}
 
 https://user-images.githubusercontent.com/95216160/154858810-4c13158a-994c-407d-922d-e476fc819fb9.mp4
 
+## **Setup**
+
+Install all the dependencies by
+```
+pip install -r requirements.txt
+```
