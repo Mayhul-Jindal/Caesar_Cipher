@@ -12,7 +12,7 @@ Here I used linux strings command, which primarily focuses on determining the co
 
 Now here I found the last string, bit like a flag so I tried it decrypting using my script and it comes out to be
 ```
-csi{c0ngr@tz_qtp1e}
+CSI{c0nGr@tz_qTp1e}
 ```
 
 ## **Demo**
